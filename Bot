@@ -1,0 +1,247 @@
+import discord
+from discord import member
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    print("This bot started successfully!")
+    print("Programmed By @Maurice.Codes!")
+
+def is_not_pinned(mess):
+    return not mess.pinned
+
+@client.event
+async def on_member_join(member):
+    channel = discord.utils.get(member.guild.channels, name='â”Šguestbook')
+    embed = discord.Embed(title="**WELCOME**\r\n",
+                          description=f"Welcome {member.mention}!\r\n"
+                                      f"Have a great time!", color=0xc70d0d)
+    embed.set_footer(text="Programmed by @Maurice.Codes")
+    await channel.send(embed=embed)
+
+@client.event
+async def on_message(message):
+    if message.content.startswith("!clear"):
+        embed = discord.Embed
+        if message.author.permissions_in(message.channel).manage_messages:
+            args = message.content.split(" ")
+            if len(args) == 2:
+                if args[1].isdigit():
+                    count = int(args[1]) + 1
+                    deleted = await message.channel.purge(limit=count, check=is_not_pinned)
+                    embed.description("The chat was cleared!")
+                    embed.set_footer(text="Programmed by @MauriceCodes")
+                    await message.channel.send(embed=embed)
+
+    if message.content.startswith("!socialmedia"):
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="**Socialmedia Accounts**",
+                              description="Instagram:\r\n"
+                                          "https://instagram.com/alphaform.formalpha\r\n"
+                                          "\r\n"
+                                          "Twitter:\r\n"
+                                          " https://twitter.com/KDS17GOATED/\r\n"
+                                          "\r\n"
+                                          "YouTube:\r\n"
+                                          "https://youtube.com/c/formulaalpha?sub_confirmation=1", color=9109643)
+        embed.set_footer(text="Programmed by @Maurice.Codes")
+        await message.channel.send(embed=embed)
+
+    if message.content.startswith("!Socialmedia"):
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="**Socialmedia Accounts**",
+                              description="Instagram:\r\n"
+                                          "https://instagram.com/alphaform.formalpha\r\n"
+                                          "\r\n"
+                                          "Twitter:\r\n"
+                                          " https://twitter.com/KDS17GOATED/\r\n"
+                                          "\r\n"
+                                          "YouTube:\r\n"
+                                          "https://youtube.com/c/formulaalpha?sub_confirmation=1", color=9109643)
+        embed.set_footer(text="Programmed by @Maurice.Codes")
+        await message.channel.send(embed=embed)
+
+    if message.content.startswith("!help"):
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="**HELP MENU**",
+                              description="!socialmedia â†’ See all my Accounts", color=9109643)
+        embed.set_footer(text="Programmed by @Maurice.Codes")
+        await message.channel.send(embed=embed)
+
+    if message.content.startswith("!Help"):
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="**HELP MENU**",
+                              description="!socialmedia â†’ See all my Accounts", color=9109643)
+        embed.set_footer(text="Programmed by @Maurice.Codes")
+        await message.channel.send(embed=embed)
+
+    if "Bastard" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Bastart" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "bastard" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "bastart" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Asshole" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Asshohle" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "asshole" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "asshohle" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Bitch" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "bitch" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Son of a Bitch" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "son of a bitch" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Fuck" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "fuck" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Motherfucker" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "motherfucker" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Mother fucker" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "mother fucker" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Prick" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "prick" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Dick" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "dick" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Penis" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "penis" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Cock" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "cock" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "Pussy" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+    if "pussy" in message.content:
+        deleted = await message.channel.purge(limit=1)
+        embed = discord.Embed(title="STOP!",
+                              description=f"{message.author.mention} this word is forbidden!")
+        await message.channel.send(embed=embed)
+
+client.run(("NzIxNzE3NDM1NzU3MjMyMTY4.XuYl1Q.jqZsGzP6GXc-1E-StuxEVfOYkEw"))
